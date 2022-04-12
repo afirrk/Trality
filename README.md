@@ -1,0 +1,2 @@
+# Trality
+Backtesting crypto bots
