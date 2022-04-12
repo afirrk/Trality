@@ -27,11 +27,6 @@ def singla(data):
     short_list = [ema_short_1, ema_short_2, ema_short_3, ema_short_4, ema_short_5, ema_short_6]
     long_list = [ema_long_1, ema_long_2, ema_long_3, ema_long_4, ema_long_5, ema_long_6]
 
-    '''
-    UP - if min value of short_list > max value of long_list
-    DOWN - if max value of short_list < min value of long_list
-    '''
-
     if min(short_list) > max(long_list):
         return 'LONG'
     if max(short_list) < min(long_list):
