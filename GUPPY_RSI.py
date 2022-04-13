@@ -6,7 +6,7 @@ When all the short-term EMAs cross below the long term EMAs - Sell
 def initialize(state):
     state.number_offset_trades = 0;
 
-def singla(data):
+def signal(data):
     ema_short_1 = data.ema(3).last
     ema_short_2 = data.ema(5).last
     ema_short_3 = data.ema(8).last
@@ -75,14 +75,14 @@ def handler(state, data):
         > print position information
         
     '''
-    if singla(data) == 'LONG' and rsi <= 30 and not has_position:
+    if signal(data) == 'LONG' and rsi <= 30 and not has_position:
         print("-------")
         print("Buy Signal: creating market order for {}".format(data.symbol))
         print("Buy value: ", buy_value, " at current market price: ", data.close_last)
         
         order_market_value(symbol=data.symbol, value=buy_value)
 
-    elif singla(data) == 'SHORT' and has_position:
+    elif signal(data) == 'SHORT' and has_position:
         print("-------")
         logmsg = "Sell Signal: closing {} position with exposure {} at current market price {}"
         print(logmsg.format(data.symbol,float(position.exposure),data.close_last))
