@@ -1,5 +1,5 @@
 '''
-LONG: Take long MACD signals when price is above the 200 period-moving average
+LONG: Take long MACD signals when price is above the 150 period-moving average
 ENTRY: Buy when the MACD crosses over the zero line
 EXIT: Sell at a profit or loss when the MACD crosses below the zero line
 '''
